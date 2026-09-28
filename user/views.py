@@ -12,7 +12,9 @@ def login_user(request):
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
-        user = authenticate(username=email , password=password)
+        user = authenticate(username=email , password=password) # username=email >>
+                                                                  # >> usernameni email sifatida yuborish
+                                                                  # bu autonticate bor funksiya bolgani uchun
         
         if user is not None: # agarda user topilmay qolmasa 
             login(request , user)
