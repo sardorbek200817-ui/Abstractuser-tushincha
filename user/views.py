@@ -5,7 +5,8 @@ from .models import CustomUser
 
 def login_user(request):
     
-    if request.user.is_authenticated:
+    if request.user.is_authenticated: # >>>> eslab qolish yani user royhatdan 
+                                      # otkan bolsa undan yana login soramaydi HTML QISMI INDEX.HTML DA
         return redirect("index")
 
     if request.method == "POST":

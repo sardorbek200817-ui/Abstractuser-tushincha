@@ -41,8 +41,16 @@ ketadigan malumotlarni hammasi form ichida bolishi kerak html dagi <form>
 
 
 
+ 6 ]                      ASOSIY >>> ROYHATDAN OTKANINI ESLAB QOLISH
+
+#    if request.user.is_authenticated: # >>>> eslab qolish yani user royhatdan 
+ #                                     # otkan bolsa undan yana login soramaydi
+#        return redirect("index")
 
 
+                       HTML qismi
+
+ {% if request.user.is_authenticated %} shuni ichidan malumotlarimizni kiritaveramiz
 
 
 
