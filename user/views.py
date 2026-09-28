@@ -7,7 +7,10 @@ def login_user(request):
     
     if request.user.is_authenticated: # >>>> eslab qolish yani user royhatdan 
                                       # otkan bolsa undan yana login soramaydi HTML QISMI INDEX.HTML DA
-        return redirect("index")
+        return redirect("index") # redirect qilishimizdan maqsad bizning malumotlarimiz
+                                  # post shaklida yuborilyabdi agarda render qilib
+                                   # html da sahifaga yuborsak unda csrf soraydi lekin index da form yoq 
+                                   # redirect shuni bajarib beradi yani csrf ni bartaraf qiladi
 
     if request.method == "POST":
         email = request.POST.get("email")
