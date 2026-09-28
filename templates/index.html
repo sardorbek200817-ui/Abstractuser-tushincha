@@ -34,15 +34,11 @@
             </div>
         </div>
 
-        <h1>Salom, {{ request.user.email }}</h1>
+        <h1>Salom, {{ request.user.email }}  kotttt</h1>
 
     {% else %}
 
         <h1>Siz hali login qilmagansiz</h1>
-
-        <a href="{% url 'login_user' %}">
-            Login qilish
-        </a>
 
     {% endif %}
 

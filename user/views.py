@@ -4,15 +4,19 @@ from .models import CustomUser
 # redirect url uchun
 
 def login_user(request):
+    
+    if request.user.is_authenticated:
+        return redirect("index")
 
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
-        user = authenticate(email=email , password=password)
+        user = authenticate(username=email , password=password)
         
         if user is not None: # agarda user topilmay qolmasa 
             login(request , user)
-            return render(request , "templates/index.html")
+            
+            return redirect("html") # html da csrf soragani uchun redirect ishlatdim
         
         else:
             return render(request ,"templates/register.html")
@@ -59,3 +63,13 @@ def register(request):
         return render(request, "templates/register.html")
 
 
+def html(request):
+    
+    return render(request , "templates/home.html")
+
+
+
+
+def index(request):
+    
+    return render(request , "templates/index.html")
