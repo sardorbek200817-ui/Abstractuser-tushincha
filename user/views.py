@@ -27,7 +27,7 @@ def login_user(request):
         else:
             return render(request ,"templates/register.html")
 
-    else: # 2 bolib shu ishlaydi yani boshki html qismini shu korsatadi
+    else: # 1 bolib shu ishlaydi yani boshki html qismini shu korsatadi
         # yani bu GET bolganda ishlaydi yani kirgandayoq get boladi
         return render(request , "templates/login.html")
 
