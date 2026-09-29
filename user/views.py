@@ -20,7 +20,7 @@ def login_user(request):
                                                                   # bu autonticate bor funksiya bolgani uchun
         
         if user is not None: # agarda user topilmay qolmasa 
-            login(request , user)
+            login(request , user) # user login qilgan qilmaganligini shu yerdan tekshiriladi
             
             return redirect("html") # html da csrf soragani uchun redirect ishlatdim
         
